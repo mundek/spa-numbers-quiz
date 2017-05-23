@@ -6,3 +6,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.results-container {
+  displa: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 40vh;
+}
