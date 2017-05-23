@@ -3,44 +3,40 @@
 <head>
   <link rel="stylesheet" type="text/css" href="app.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="spa.css">
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
 <body>
-
-  <!-- Set up sections for SAP -->
-<section>
-  <div class='container'>
-    Números en Español
-  </div>
-
-  <div class='container'>
-    <div class='container'>Choose number set:
-      <div class='vert-container'>
-        1-20 1-99 100-999
+  <!-- Start Page -->
+  <section class="page page--active">
+    <h1>Números en Español</h1>
+    <div class='container'>
+      <div class='container'>Choose number set:
+        <div class='vert-container'>
+          1-20 1-99 100-999
+        </div>
+      </div>
+      <div class='container'>
+        Choose number of questions: <input type="number" value="10">
       </div>
     </div>
     <div class='container'>
-      Choose number of questions: <input type="number" value="10">
+      <button>Begin</button>
     </div>
-  </div>
-  <div class='container'>
-    <button>
-    Begin
-  </button>
-  </div>
-</section>
-  
-<section>
-  <h1>Números en Español</h1>
-  <i class="material-icons">volume_up</i><input type="number">
-  <button>Check</button>
-</section>
- 
-<section>
-  <h1>Números en Español</h1>
-  <h2>Results</h2>
-  <div class='results-container'>
+  </section>
+
+  <!-- Quiz Page -->
+  <section class="page">
+    <h1>Números en Español</h1>
+    <i class="material-icons">volume_up</i><input type="number">
+    <button>Check</button>
+  </section>
+
+  <!-- Results Page -->
+  <section class="page">
+    <h1>Números en Español</h1>
+    <h2>Results</h2>
     <ul class='results-container'>
       <li>212</li>
       <li>212</li>
@@ -68,8 +64,8 @@
       <li>212</li>
       <li>212</li>
       <li>212</li>
-    </ul>    
-  </div>
-</section>  
+    </ul>
+  </section>
+  
 </body>
 </html>
