@@ -28,9 +28,9 @@ function startQuiz() {
   } else {
     window.alert("Please enter a number!");
   }
- } 
+ }
   //Calculates random number based on checkbox and number questions entered in input and returns array
- 
+
 function randArray(numberStart, numberEnd, numQuestions) {
   var arr = [];
   var i = 0;
