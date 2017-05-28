@@ -22,13 +22,12 @@ function startQuiz() {
   //SETS INPUT FROM CHOOSE NUMBER OF QUESTIONS TO VARIABLE
   numQuestions = document.getElementById("questions").value;
 
-  //Checks to see if questions text input is blank
-  if (document.getElementById("questions").value !== ''){
-arr = randArray();
+ if (numQuestions !== "" && isNaN(numQuestions) === false) {
+    arr = randArray(numberStart, numberEnd, numQuestions);
+    console.log(arr);
+  } else {
+    window.alert("Please enter a number!");
   }
-else {
-  window.alert("Please enter amount of questions!");
-}
  } 
   //Calculates random number based on checkbox and number questions entered in input and returns array
  
