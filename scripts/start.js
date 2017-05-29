@@ -1,4 +1,3 @@
-// document.getElementById("startBtn").addEventListener("click", startQuiz);
 function startQuiz() {
 
   var numberStart = 1;
@@ -29,18 +28,21 @@ function startQuiz() {
     theFloor = theCeiling;
     theCeiling = buffer;
   };
+
   console.log("theFloor: " + theFloor);
   console.log("theCeiling: " + theCeiling);
   console.log("listLength: " + listLength);
 
-
- if (listLength !== "" && isNaN(listLength) === false) {
+  if (listLength !== "" && isNaN(listLength) === false) {
     arr = randArray(theFloor, theCeiling, listLength);
     console.log(arr);
   } else {
     window.alert("Please enter a number!");
   }
- }
+
+  document.getElementById("startPage").classList.remove('page--active');
+  document.getElementById("quizPage").classList.add('page--active');
+}
 //  Calculates random number based on checkbox and number questions entered in input and returns array
 
 function randArray(theFloor, theCeiling, listLength) {
