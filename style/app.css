@@ -29,3 +29,8 @@ display: -webkit-flex;
   flex-wrap: wrap;
   height: 50px;
 }
+
+.icon-button {
+	cursor: pointer;
+}
+

@@ -4,6 +4,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style/app.css">
   <link rel="stylesheet" href="style/spa.css">
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   <meta charset="UTF-8">
   <title>¡Aprende los Números con Facilidad!</title>
 </head>
@@ -40,7 +41,7 @@
   <!-- Quiz Page -->
   <section class="page" id="quizPage">
     <h1>Números en Español</h1>
-    <i class="material-icons">volume_up</i><input type="number">
+    <i class="material-icons icon-button" onclick="sayNumber()">volume_up</i><input type="number">
     <button onclick="checkAnswer()">Check</button>
   </section>
 
@@ -62,5 +63,6 @@
   <script type="text/javascript" src="scripts/results.js"></script>
   <script type="text/javascript" src="scripts/start.js"></script>
   <script type="text/javascript" src="scripts/monitorInputs.js"></script>
+  <script type="text/javascript" src="scripts/quiz.js"></script>
 </body>
 </html>
