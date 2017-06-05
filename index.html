@@ -3,50 +3,43 @@
 <head>
   <link rel="stylesheet" type="text/css" href="app.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="spa.css">
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
 <body>
-
-  <!-- Set up sections for SAP -->
-
-<section>
+  <!-- Start Page -->
+  <section class="page">
     <h1>Números en Español</h1>
-<div class='container'>
-	<div class='grayText'>
-		<div class='container'>Choose number set:
-			<div class='vert-container'>
-				<table style="width:50%">
-					<tr>
-						<div><input type="checkbox"> 1-20</div>
-						<div><input type="checkbox"> 1-99</div>
-						<div><input type="checkbox"> 100-999</div>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
     <div class='container'>
-      Choose number of questions: <input class="grayText" type="number" value="10">
+      <div class='container'>Choose number set:
+        <div class='vert-container'>
+          1-20 1-99 100-999
+        </div>
+      </div>
+      <div class='container'>
+        Choose number of questions: <input type="number" value="10">
+      </div>
     </div>
-  </div>
-</div>
-    <button  class='myButton'>Begin</button>
-	</div>
-</section>
+    <div class='container'>
+      <button>Begin</button>
+    </div>
+  </section>
 
-<section>
-  <h1>Números en Español</h1>
-  <i class="material-icons">volume_up</i><input type="number">
-  <button  class='myButton'>Check</button>
-</section>
- 
-<section>
-  <h1>Números en Español</h1>
-  <h2 class='grayText'>Results</h2>
-  <div class='results-container'>
-    <ul class='results-container'>
+  <!-- Quiz Page -->
+  <section class="page">
+    <h1>Números en Español</h1>
+    <i class="material-icons">volume_up</i><input type="number">
+    <button>Check</button>
+  </section>
+
+  <!-- Results Page -->
+  <section class="page page--active">
+    <h1>Números en Español</h1>
+    <h2>Results</h2>
+    <ol class='results-container'>
+      <li>212 <i class="material-icons">done</i></li>
+      <li>212 ! <span class="wrong">(233)</span></li>
       <li>212</li>
       <li>212</li>
       <li>212</li>
@@ -71,13 +64,8 @@
       <li>212</li>
       <li>212</li>
       <li>212</li>
-      <li>212</li>
-      <li>212</li>
-    </ul>    
-  </div>
-  <button  class='myButton'>
-    Restart
-  </button> 
-</section>  
+    </ul>
+  </section>
+  <script src="results.js"></script>
 </body>
 </html>
