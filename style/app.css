@@ -1,20 +1,3 @@
-.container {
-  display: flex; /* or inline-flex */
-}
-
-.vert-container {
-display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-.results-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 40vh;
-}
 
 .container-vertical-spacer {
   display: flex;
@@ -35,10 +18,12 @@ display: -webkit-flex;
 }
 
 .container {
+	display: flex; /* or inline-flex */
 	font-family: arial;
 	font-size: 20px;
   }
-Section  {
+
+.section  {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -46,24 +31,29 @@ Section  {
 	text-align: left;
 	vertical-align: middle;
 }
-h1 {
+
+.h1 {
 	display: flex;
 	font-family: "Lucida Sans Unicode";
 	font-size: 36px;
 	text-align: center;
 }
+
 .vert-container {
-	display: flex;
-	flex-direction: column;
+	display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;	
 	text-align: justify;
 }
 
 .results-container {
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	max-height: 40vh;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 40vh;
 }
+
 .myButton {
 	background: linear-gradient(rgb(83, 92, 79) 5%, rgb(61, 66, 58) 100%) rgb(83, 92, 79);
 	border-radius: 4px;
@@ -77,11 +67,10 @@ h1 {
 	padding: 6px 12px;
 	text-decoration: none;
 	text-shadow: rgb(41, 41, 41) 0px 1px 0px;
-  }
+}
+
 .grayText {
 	color: gray;
 	font-family: arial;
 	font-size: 20px;
 }
-
-

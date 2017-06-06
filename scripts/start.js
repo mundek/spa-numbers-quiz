@@ -42,10 +42,12 @@ theSPA.startQuiz = function() {
     window.alert("Please enter a number!");
   }
 
+  // make quiz section visible; make start page invisible
   document.getElementById("startPage").classList.remove('page--active');
   document.getElementById("quizPage").classList.add('page--active');
 }
-//  Calculates random number based on checkbox and number questions entered in input and returns array
+
+// Calculates random number based on checkbox and number questions entered in input and returns array
 
 theSPA.randArray = function(theFloor, theCeiling, listLength) {
   var arr = [];
@@ -53,11 +55,11 @@ theSPA.randArray = function(theFloor, theCeiling, listLength) {
 
   while (i < listLength) {
     randNumber = Math.floor(Math.random() * (theCeiling - theFloor + 1) + theFloor);
-	// Don't allow to numbers in a row to be the same
+  	// Don't allow to numbers in a row to be the same
     if(randNumber !== arr[i-1]) {
-	  arr.push(randNumber);
+	    arr.push(randNumber);
       i++;
-	}
+	  }
   }
   return arr;
 }
