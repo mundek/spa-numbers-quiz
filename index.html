@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="app.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="spa.css">
+  <link rel="stylesheet" type="text/css" href="style/app.css">
+  <link rel="stylesheet" href="style/spa.css">
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>¡Aprende los Números con Facilidad!</title>
 </head>
 <body>
   <!-- Start Page -->
-  <section class="page">
+  <section class="page page--active" id="startPage">
     <h1>Números en Español</h1>
-    <div class='container'>
-      <div class='container'>Choose number set:
+    <div class='vert-container'>
+      <div class='container'>
         <div class='vert-container'>
-          1-20 1-99 100-999
+          <div class='container'>Indicate a range of numbers to practice:</div>
+          <div class='container'>
+            <p>From: <input class="lowerBound" id="lowerBound" onchange='lowerCheck(this)' value="1" size="3" maxlength="3"></p>
+            <p>To: <input class="upperBound" id="upperBound" onchange='upperCheck(this)' value="999" size="3" maxlength="3"></p>
+          </div>
+        </div>
+        <div class='container-vertical-spacer'></div>
+        <div class='vert-container'>
+          <div class='container'>
+            Choose number of questions:
+          </div>
+          <div class='container'>
+            <input class="numberOfItems" id="numberOfItems" onchange='minimumItems(this)'value="10" size="3" maxlength="2">
+          </div>
         </div>
       </div>
+      <div class='container-horizontal-spacer'></div>
       <div class='container'>
-        Choose number of questions: <input type="number" value="10">
+        <button id="startBtn" onclick="startQuiz()">Begin</button>
       </div>
-    </div>
-    <div class='container'>
-      <button>Begin</button>
     </div>
   </section>
 
   <!-- Quiz Page -->
-  <section class="page">
+  <section class="page" id="quizPage">
     <h1>Números en Español</h1>
-    <i class="material-icons">volume_up</i><input type="number">
-    <button>Check</button>
+	<div class="progress">0 of X</div>
+    <i class="material-icons icon-button" onclick="sayNumber()">volume_up</i><input type="number">
+    <button onclick="checkAnswer()">Check</button>
   </section>
 
   <!-- Results Page -->
-  <section class="page page--active">
+  <section class="page" id="resultsPage">
     <h1>Números en Español</h1>
     <h2>Results</h2>
     <ol class='results-container'>
       <li>212 <i class="material-icons">done</i></li>
       <li>212 ! <span class="wrong">(233)</span></li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
-      <li>212</li>
+      <!-- 
+        Put a div in here as a dynamic element for displaying the results list
+        using JS. List will include the random number, an icon to repeat the
+        pronunciation of the number, and the number that the student gave
+        when incorrect (with another icon to hear the wrong number?).
+      -->
     </ul>
   </section>
-  <script src="results.js"></script>
+  <script type="text/javascript" src="scripts/results.js"></script>
+  <script type="text/javascript" src="scripts/start.js"></script>
+  <script type="text/javascript" src="scripts/monitorInputs.js"></script>
+  <script type="text/javascript" src="scripts/quiz.js"></script>
 </body>
 </html>

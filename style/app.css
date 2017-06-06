@@ -1,4 +1,40 @@
 .container {
+  display: flex; /* or inline-flex */
+}
+
+.vert-container {
+display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 40vh;
+}
+
+.container-vertical-spacer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50px;
+}
+
+.container-horizontal-spacer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 50px;
+}
+
+.icon-button {
+	cursor: pointer;
+}
+
+.container {
 	font-family: arial;
 	font-size: 20px;
   }
@@ -47,4 +83,5 @@ h1 {
 	font-family: arial;
 	font-size: 20px;
 }
+
 
