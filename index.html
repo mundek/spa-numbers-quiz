@@ -18,8 +18,8 @@
         <div class='vert-container'>
           <div class='container'>Indicate a range of numbers to practice:</div>
           <div class='container'>
-            <p>From: <input class="lowerBound" id="lowerBound" onchange='lowerCheck(this)' value="1" size="3" maxlength="3"></p>
-            <p>To: <input class="upperBound" id="upperBound" onchange='upperCheck(this)' value="999" size="3" maxlength="3"></p>
+            <p>From: <input class="lowerBound" id="lowerBound" onchange='theSPA.lowerCheck(this)' value="1" size="3" maxlength="3"></p>
+            <p>To: <input class="upperBound" id="upperBound" onchange='theSPA.upperCheck(this)' value="999" size="3" maxlength="3"></p>
           </div>
         </div>
         <div class='container-vertical-spacer'></div>
@@ -28,13 +28,13 @@
             Choose number of questions:
           </div>
           <div class='container'>
-            <input class="numberOfItems" id="numberOfItems" onchange='minimumItems(this)'value="10" size="3" maxlength="2">
+            <input class="numberOfItems" id="numberOfItems" onchange='theSPA.minimumItems(this)'value="10" size="3" maxlength="2">
           </div>
         </div>
       </div>
       <div class='container-horizontal-spacer'></div>
       <div class='container'>
-        <button id="startBtn" onclick="startQuiz()">Begin</button>
+        <button id="startBtn" onclick="theSPA.startQuiz()">Begin</button>
       </div>
     </div>
   </section>
@@ -43,8 +43,8 @@
   <section class="page" id="quizPage">
     <h1>Números en Español</h1>
 	<div class="progress">0 of X</div>
-    <i class="material-icons icon-button" onclick="sayNumber()">volume_up</i><input type="number">
-    <button onclick="checkAnswer()">Check</button>
+    <i class="material-icons icon-button" onclick="theSPA.sayNumber()">volume_up</i><input type="number" id="userResponse">
+    <button onclick="theSPA.advance()">Check</button>
   </section>
 
   <!-- Results Page -->
