@@ -6,16 +6,14 @@ theSPA.startQuiz = function() {
   var numberEnd = 0;
   var numQuestions = 0;
   var randNumber = 0;
-  this.arr = [];
-
-  // CHECKS FOR WHICH CHECKBOX IS CHECKED THEN SETS NUMBERS FOR RANDOM FUNCTION
-  // NO ERROR CHECKING TO SEE IF INPUT IS EVEN A NUMBER
+  this.itemsArr = [];
 
   var theFloor = Number(document.getElementById("lowerBound").value);
-
   var theCeiling = Number(document.getElementById("upperBound").value);
-  
   var listLength = Number(document.getElementById("numberOfItems").value);
+
+  theSPA.progIndicator = document.getElementById("scoreboard");
+  theSPA.progIndicator.innerHTML = "<h2></h2>";
 
   // console.log("theFloor: " + theFloor);
   // console.log("theCeiling: " + theCeiling);
@@ -31,35 +29,35 @@ theSPA.startQuiz = function() {
     theCeiling = buffer;
   };
 
-  console.log("theFloor: " + theFloor);
-  console.log("theCeiling: " + theCeiling);
-  console.log("listLength: " + listLength);
+  // console.log("theFloor: " + theFloor);
+  // console.log("theCeiling: " + theCeiling);
+  // console.log("listLength: " + listLength);
 
-  if (listLength !== "" && isNaN(listLength) === false) {
-    this.arr = this.randArray(theFloor, theCeiling, listLength);
-    console.log(this.arr);
-  } else {
-    window.alert("Please enter a number!");
-  }
+  theSPA.progIndicator.innerHTML = "<h2>0 / "
+    + listLength
+    + "</h2>";
+
+  this.itemsArr = this.randArray(theFloor, theCeiling, listLength);
+  // console.log(this.itemsArr);
+
 
   // make quiz section visible; make start page invisible
   document.getElementById("startPage").classList.remove('page--active');
   document.getElementById("quizPage").classList.add('page--active');
 }
 
-// Calculates random number based on checkbox and number questions entered in input and returns array
-
+// Calculates list of random numbers
 theSPA.randArray = function(theFloor, theCeiling, listLength) {
-  var arr = [];
+  var listArr = [];
   var i = 0;
 
   while (i < listLength) {
     randNumber = Math.floor(Math.random() * (theCeiling - theFloor + 1) + theFloor);
-  	// Don't allow to numbers in a row to be the same
-    if(randNumber !== arr[i-1]) {
-	    arr.push(randNumber);
+  	// Don't allow two numbers in a row to be the same
+    if(randNumber !== listArr[i-1]) {
+	    listArr.push(randNumber);
       i++;
 	  }
   }
-  return arr;
+  return listArr;
 }
