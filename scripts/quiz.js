@@ -23,9 +23,11 @@ theSPA.advance = function() {
 
   if (theSPA.questionCounter >= this.itemsArr.length) {
   	// make results page visible, make quiz page invisible
-	document.getElementById("quizPage").classList.remove('page--active');
+		document.getElementById("quizPage").classList.remove('page--active');
     document.getElementById("resultsPage").classList.add('page--active');
   	console.log(theSPA.responses);
+		
+		theSPA.Results(this.itemsArr, this.responses);
   }
   userInput.value = "";	
 }
