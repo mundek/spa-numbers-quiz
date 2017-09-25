@@ -14,6 +14,8 @@ theSPA.startQuiz = function() {
 
   theSPA.progIndicator = document.getElementById("scoreboard");
   theSPA.progIndicator.innerHTML = "<h2></h2>";
+  theSPA.resContainer = document.getElementById("resCont");
+  theSPA.resContainer.innerHTML = "<h3>Hi!!!!</h3>";
 
   // console.log("theFloor: " + theFloor);
   // console.log("theCeiling: " + theCeiling);
@@ -44,6 +46,7 @@ theSPA.startQuiz = function() {
   // make quiz section visible; make start page invisible
   document.getElementById("startPage").classList.remove('page--active');
   document.getElementById("quizPage").classList.add('page--active');
+  theSPA.sayNumber();
 }
 
 // Calculates list of random numbers

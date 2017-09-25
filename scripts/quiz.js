@@ -5,7 +5,7 @@ theSPA.responses = [];
 
 theSPA.sayNumber = function() {
   // console.log(this.itemsArr[this.questionCounter]);
-  var numString = this.itemsArr[this.questionCounter].toString();
+  var numString = this.itemsArr[this.questionCounter].toString() || "";
   responsiveVoice.speak(numString, 'Spanish Latin American Female');
 };
 
@@ -19,7 +19,6 @@ theSPA.advance = function() {
     + "</h2>";
   theSPA.questionCounter++;
   // console.log(this.itemsArr.length + " | " + theSPA.questionCounter);
-  
 
   if (theSPA.questionCounter >= this.itemsArr.length) {
   	// make results page visible, make quiz page invisible
@@ -27,12 +26,14 @@ theSPA.advance = function() {
     document.getElementById("resultsPage").classList.add('page--active');
   	console.log(theSPA.responses);
 		
-		theSPA.Results(this.itemsArr, this.responses);
+		theSPA.reportResults(this.itemsArr, this.responses);
+  } else {
+    userInput.value = "";
+    theSPA.sayNumber();  
   }
-  userInput.value = "";	
 }
 
-// Finish quiz by advance to the last (results) section
+// Finish quiz by advancing to the last (results) section
 
 // Add button to end quiz early
 

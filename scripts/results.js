@@ -1,19 +1,21 @@
 var theSPA = theSPA || {};
 
 // container is the html ul element where it renders
-const container = document.querySelector('.results-container');
+// var container = document.querySelector('.results-container');
 
-theSPA.Results = (answersArray, responseArray) => {
+
+theSPA.reportResults = function(answersArray, responseArray) {
   let result = '';
 
-  responseArray.forEach((studentRespose,i) => {
+  responseArray.forEach((studentResponse,i) => {
     const actualAnswer = answersArray[i];
     
-    const check = (studentRespose === actualAnswer) ? 
+    const check = (studentResponse === actualAnswer) ? 
       `<i class="material-icons">done</i>` :
-      `! <span class="correct-answer">(${actualAnswer})</span>`
-    result += `<li><span class="student-guess">${studentRespose}</span> ${check}`;
+      `! <span class="correct-answer">(${actualAnswer})</span>`;
+    result += `<li><span class="student-guess">${studentResponse}</span> ${check}</li>`;
   });
+  console.log(result);
 
-  container.innerHTML = result;
+  theSPA.resContainer.innerHTML = result;
 }

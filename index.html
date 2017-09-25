@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style/app.css">
-  <link rel="stylesheet" href="style/spa.css">
-  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-  <meta charset="UTF-8">
-  <title>¡Aprende los Números con Facilidad!</title>
-</head>
-<body>
-  <!-- Start Page -->
-
-  <section class="page page--active" id="startPage">
-    <h1>Números en Español</h1>
-    <div class='vert-container'>
-      <div class='container'>
-        <div class='vert-container'>
-          <div class='container'>Indicate a range of numbers to practice:</div>
-          <div class='container'>
-            <p>From: <input class="lowerBound" id="lowerBound" onchange='theSPA.lowerCheck(this)' value="1" size="3" maxlength="3"></p>
-            <p>To: <input class="upperBound" id="upperBound" onchange='theSPA.upperCheck(this)' value="999" size="3" maxlength="3"></p>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style/app.css">
+    <link rel="stylesheet" href="style/spa.css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript" src="scripts/results.js"></script>
+    <script type="text/javascript" src="scripts/start.js"></script>
+    <script type="text/javascript" src="scripts/monitorInputs.js"></script>
+    <script type="text/javascript" src="scripts/quiz.js"></script>
+    <title>¡Aprende los Números con Facilidad!</title>
+  </head>
+  <body>
+    <!-- Start Page -->
+    <section class="page page--active" id="startPage">
+      <h1>Números en Español</h1>
+      <div class='vert-container'>
+        <div class='container'>
+          <div class='vert-container'>
+            <div class='container'>Indicate a range of numbers to practice:</div>
+            <div class='container'>
+              <p>From: <input class="lowerBound" id="lowerBound" onchange='theSPA.lowerCheck(this)' value="1" size="3" maxlength="3"></p>
+              <p>To: <input class="upperBound" id="upperBound" onchange='theSPA.upperCheck(this)' value="999" size="3" maxlength="3"></p>
+            </div>
+          </div>
+          <div class='container-vertical-spacer'></div>
+          <div class='vert-container'>
+            <div class='container'>
+              Choose number of questions:
+            </div>
+            <div class='container'>
+              <input class="numberOfItems" id="numberOfItems" onchange='theSPA.minimumItems(this)'value="10" size="3" maxlength="2">
+            </div>
           </div>
         </div>
-        <div class='container-vertical-spacer'></div>
-        <div class='vert-container'>
-          <div class='container'>
-            Choose number of questions:
-          </div>
-          <div class='container'>
-            <input class="numberOfItems" id="numberOfItems" onchange='theSPA.minimumItems(this)'value="10" size="3" maxlength="2">
-          </div>
+        <div class='container-horizontal-spacer'></div>
+        <div class='container'>
+          <button id="startBtn" onclick="theSPA.startQuiz()">Begin</button>
         </div>
       </div>
-      <div class='container-horizontal-spacer'></div>
-      <div class='container'>
-        <button id="startBtn" onclick="theSPA.startQuiz()">Begin</button>
+    </section>
+
+    <!-- Quiz Page -->
+    <section class="page" id="quizPage">
+      <h1>Números en Español</h1>
+      <div class="progress" id="scoreboard">0 of X</div>
+      <i class="material-icons icon-button" onclick="theSPA.sayNumber()">volume_up</i><input type="number" id="userResponse">
+      <button onclick="theSPA.advance()">Check</button>
+    </section>
+
+    <!-- Results Page -->
+    <section class="page" id="resultsPage">
+      <h1>Números en Español</h1>
+      <h2>Results</h2>
+      <div class="results-container" id="resCont">
+        <ol>
+          <li>212 <i class="material-icons">done</i></li>
+          <li>212 ! <span class="wrong">(233)</span></li>
+        <!-- 
+          Put a div in here as a dynamic element for displaying the results list
+          using JS. List will include the random number, an icon to repeat the
+          pronunciation of the number, and the number that the student gave
+          when incorrect (with another icon to hear the wrong number?).
+        -->
+        </ol>
       </div>
-    </div>
-  </section>
-
-  <!-- Quiz Page -->
-  <section class="page" id="quizPage">
-    <h1>Números en Español</h1>
-	<div class="progress" id="scoreboard">0 of X</div>
-    <i class="material-icons icon-button" onclick="theSPA.sayNumber()">volume_up</i><input type="number" id="userResponse">
-    <button onclick="theSPA.advance()">Check</button>
-  </section>
-
-  <!-- Results Page -->
-  <section class="page" id="resultsPage">
-    <h1>Números en Español</h1>
-    <h2>Results</h2>
-    <ol class='results-container'>
-      <li>212 <i class="material-icons">done</i></li>
-      <li>212 ! <span class="wrong">(233)</span></li>
-      <!-- 
-        Put a div in here as a dynamic element for displaying the results list
-        using JS. List will include the random number, an icon to repeat the
-        pronunciation of the number, and the number that the student gave
-        when incorrect (with another icon to hear the wrong number?).
-      -->
-    </ul>
-  </section>
-  <script type="text/javascript" src="scripts/results.js"></script>
-  <script type="text/javascript" src="scripts/start.js"></script>
-  <script type="text/javascript" src="scripts/monitorInputs.js"></script>
-  <script type="text/javascript" src="scripts/quiz.js"></script>
-</body>
+    </section>
+  </body>
 </html>
