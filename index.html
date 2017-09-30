@@ -10,6 +10,7 @@
     <script type="text/javascript" src="scripts/start.js"></script>
     <script type="text/javascript" src="scripts/monitorInputs.js"></script>
     <script type="text/javascript" src="scripts/quiz.js"></script>
+    <script type="text/javascript" src="scripts/restart.js"></script>
     <title>¡Aprende los Números con Facilidad!</title>
   </head>
   <body>
@@ -58,14 +59,17 @@
         <ol>
           <li>212 <i class="material-icons">done</i></li>
           <li>212 ! <span class="wrong">(233)</span></li>
-        <!-- 
+        <!--
           Put a div in here as a dynamic element for displaying the results list
           using JS. List will include the random number, an icon to repeat the
           pronunciation of the number, and the number that the student gave
           when incorrect (with another icon to hear the wrong number?).
-        -->
+          -->
         </ol>
       </div>
-    </section>
+      <div>
+<button onclick="theSPA.restart()" type="button">Restart Quiz</button>
+      </div>
+  </section>
   </body>
 </html>
