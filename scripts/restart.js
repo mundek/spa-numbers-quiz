@@ -1,3 +1,8 @@
-const restartBtns = document.querySelectorAll('.restart-btn');
-restartBtns.forEach(btn => btn.onclick = theSPA.startQuiz.bind(theSPA));
+var theSPA = theSPA || {};
 
+theSPA.restart = function() {
+  theSPA.questionCounter = 0;
+  theSPA.responses = [];
+document.getElementById("resultsPage").classList.remove('page--active');
+document.getElementById("startPage").classList.add('page--active');
+}
