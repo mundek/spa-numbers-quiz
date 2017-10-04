@@ -9,13 +9,14 @@ theSPA.reportResults = function(answersArray, responseArray) {
 
   responseArray.forEach((studentResponse,i) => {
     const actualAnswer = answersArray[i];
-    
-    const check = (studentResponse === actualAnswer) ? 
+
+    const check = (studentResponse === actualAnswer) ?
       `<i class="material-icons">done</i>` :
       `! <span class="correct-answer">(${actualAnswer})</span>`;
     result += `<li><span class="student-guess">${studentResponse}</span> ${check}</li>`;
   });
   console.log(result);
 
-  theSPA.resContainer.innerHTML = result;
+    theSPA.resContainer.innerHTML = result;
+
 }
