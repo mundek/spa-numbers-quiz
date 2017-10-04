@@ -7,6 +7,8 @@ theSPA.startQuiz = function() {
   var numQuestions = 0;
   var randNumber = 0;
   this.itemsArr = [];
+  this.questionCounter = 0;
+  this.responses = [];
 
   var theFloor = Number(document.getElementById("lowerBound").value);
   var theCeiling = Number(document.getElementById("upperBound").value);
@@ -16,10 +18,6 @@ theSPA.startQuiz = function() {
   theSPA.progIndicator.innerHTML = "<h2></h2>";
   theSPA.resContainer = document.getElementById("resCont");
   theSPA.resContainer.innerHTML = "<h3>Hi!!!!</h3>";
-
-  // console.log("theFloor: " + theFloor);
-  // console.log("theCeiling: " + theCeiling);
-  // console.log("listLength: " + listLength);
 
   // DO SOME SOFT ERROR CHECKING (FAIL GRACEFULLY)
   if (listLength < 1 || isNaN(listLength)) { listLength = 1; };
@@ -31,21 +29,21 @@ theSPA.startQuiz = function() {
     theCeiling = buffer;
   };
 
-  // console.log("theFloor: " + theFloor);
-  // console.log("theCeiling: " + theCeiling);
-  // console.log("listLength: " + listLength);
-
   theSPA.progIndicator.innerHTML = "<h2>0 / "
     + listLength
     + "</h2>";
 
   this.itemsArr = this.randArray(theFloor, theCeiling, listLength);
-  // console.log(this.itemsArr);
 
-
-  // make quiz section visible; make start page invisible
+  // make start page invisible
   document.getElementById("startPage").classList.remove('page--active');
+
+  // make results invisible (for restart scenario)
+  document.querySelector("#resultsPage").classList.remove('page--active');
+
+  // make quiz section visible
   document.getElementById("quizPage").classList.add('page--active');
+
   theSPA.sayNumber();
 }
 
