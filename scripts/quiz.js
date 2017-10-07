@@ -33,6 +33,4 @@ theSPA.advance = function() {
 }
 
 // Finish quiz by advancing to the last (results) section
-
 // Add button to end quiz early
-
