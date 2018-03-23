@@ -14,63 +14,115 @@
     <title>¡Aprende los Números con Facilidad!</title>
   </head>
   <body>
+
     <!-- Start Page -->
     <section class="page page--active" id="startPage">
-      <h1>Números en Español</h1>
-      <div class='vert-container'>
-        <div class='container'>
-          <div class='vert-container'>
-            <div class='container'>Indicate a range of numbers to practice:</div>
-            <div class='container'>
-              <p>From: <input class="lowerBound" id="lowerBound" onchange='theSPA.lowerCheck(this)' value="1" size="3" maxlength="3"></p>
-              <p>To: <input class="upperBound" id="upperBound" onchange='theSPA.upperCheck(this)' value="999" size="3" maxlength="3"></p>
-            </div>
-          </div>
-          <div class='container-vertical-spacer'></div>
-          <div class='vert-container'>
-            <div class='container'>
-              Choose number of questions:
-            </div>
-            <div class='container'>
-              <input class="numberOfItems" id="numberOfItems" onchange='theSPA.minimumItems(this)'value="10" size="3" maxlength="2">
-            </div>
-          </div>
+      <div class="content-box">
+        <h1>Números en Español</h1>
+        <div class="startPage__range">
+          <h2>Indicate a range of numbers to practice:</h2>
+          From:
+          <input
+            id="lowerBound"
+            class="lowerBound"
+            onchange='theSPA.lowerCheck(this)'
+            value="1"
+            size="3"
+            maxlength="3">
+          <br>
+          <br>
+          To:
+          <input
+            id="upperBound"
+            class="upperBound"
+            onchange='theSPA.upperCheck(this)'
+            value="999"
+            size="3"
+            maxlength="3">
         </div>
-        <div class='container-horizontal-spacer'></div>
-        <div class='container'>
-          <button id="startBtn" onclick="theSPA.startQuiz()">Begin</button>
+
+        <div class="startPage__number-of-questions">
+          <h2>Choose number of questions:</h2>
+          <input
+            id="numberOfItems"
+            class="numberOfItems"
+            onchange='theSPA.minimumItems(this)'
+            value="10"
+            size="3"
+            maxlength="2">
         </div>
+        <button
+          id="startBtn"
+          onclick="theSPA.startQuiz()">
+          Begin
+        </button>
       </div>
     </section>
+    <!-- End Start Page -->
 
     <!-- Quiz Page -->
     <section class="page" id="quizPage">
-      <h1>Números en Español</h1>
-      <div class="progress" id="scoreboard">0 of X</div>
-      <i class="material-icons icon-button" onclick="theSPA.sayNumber()">volume_up</i><input type="number" id="userResponse">
-      <button onclick="theSPA.advance()">Check</button>
-      <button onclick="theSPA.restart()" type="button">Restart</button>
+      <div class="content-box">
+        <h1>Números en Español</h1>
+        <div class="quizPage__progress-bar">
+          <div
+            id="scoreboard"
+            class="quizPage__progress">
+            0 of X
+          </div>
+          <button
+            class="quizPage__restart-btn"
+            onclick="theSPA.restart()"
+            type="button">
+            Start All Over
+          </button>
+        </div>
+        <input
+          type="number"
+          id="userResponse">
+        <i
+          class="material-icons icon-button"
+          onclick="theSPA.sayNumber()">
+          volume_up
+        </i>
+        <br>
+        <br>
+        <button
+          class="quizPage__submit-btn"
+          onclick="theSPA.advance()">
+          Submit Answer
+        </button>
+      </div>
     </section>
+    <!-- End Quiz Page -->
 
     <!-- Results Page -->
     <section class="page" id="resultsPage">
-      <h1>Números en Español</h1>
-      <h2>Results</h2>
-      <div class="results-container" id="resCont">
-        <ol>
-          <li>212 <i class="material-icons">done</i></li>
-          <li>212 ! <span class="wrong">(233)</span></li>
-        <!--
-          Put a div in here as a dynamic element for displaying the results list
-          using JS. List will include the random number, an icon to repeat the
-          pronunciation of the number, and the number that the student gave
-          when incorrect (with another icon to hear the wrong number?).
-          -->
-        </ol>
-      </div>
-      <div>
-        <button onclick="theSPA.restart()" type="button">Restart Quiz</button>
+      <div class="content-box">
+        <h1>Números en Español</h1>
+        <h2>Results</h2>
+        <div
+          class="results-container"
+          id="resCont">
+          <ol>
+            <li>
+              212
+              <i class="material-icons">done</i>
+            </li>
+            <li>
+              212 ! <span class="wrong">(233)</span>
+            </li>
+          </ol>
+        </div>
+        <button
+          class="resultsPage__restart-btn"
+          onclick="theSPA.restart()"
+          type="button">
+          Restart Quiz
+        </button>
       </div>
     </section>
+    <!-- End Results Page -->
+
   </body>
 </html>
